@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>word-wrap / overflow-wrap: break-word around float</title>
+    <style>
+      /* Force use specific font to easily see differences between browsers */
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+      body {
+        font-family: 'Roboto', system-ui, sans-serif;
+        font-size: 16px;
+        line-height: 1.25;
+        background-color: #ccc;
+        /* Prevent long words from overflowing out of wrapper */
+        overflow-wrap: break-word;
+        /* Alias for `overflow-wrap` */
+        word-wrap: break-word;
+      }
+
+      .wrapper {
+        max-width: 352px;
+      }
+
+      .wrapper > ol {
+        counter-reset: list;
+        padding-left: 0;    /* Remove default css */
+        background-color: white;
+      }
+
+      .wrapper > ol > li {
+        list-style: none;   /* Remove default css */
+        background-color: #efc7ef;  /* light pink */
+      }
+
+      .wrapper > ol > li::before {
+        content: '[' counter(list) ']';
+        counter-increment: list;
+        float: left;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-size: 32px;
+        background-color: #999;
+      }
+
+      .info > span {
+        white-space: break-spaces;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <ol>
+        <li><p>d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592 The quick brown fox jumps over the lazy dog</p></li>
+        <li><p><a href="https://example.com/"
+                  target="_blank"
+                  rel="noopener">d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592 The quick brown fox jumps over the lazy dog</a></p></li>
+      </ol>
+      <div class="info"></div>
+    </div>
+    <script>
+      var elt = document.getElementsByClassName('info')[0];
+      if (elt) {
+        elt.innerHTML = '<span>' + navigator.userAgent + '</span>';
+      }
+    </script>      
+  </body>
+</html>
