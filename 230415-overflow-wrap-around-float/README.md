@@ -8,9 +8,6 @@
 
 ## Different results in different browsers
 
-
-
-
 Scroll left and right to see all the results.
 
 <table>
@@ -43,4 +40,26 @@ The results are all different from the others.
 - **Safari:** Only non-link text is wrapped around the floated box.
 - **Firefox:** Neither non-link nor link text is wrapped around the floated box.
 
-Tested on Android 10 `QQ3A.200805.001` on Google Pixel 3 XL (Chrome, Firefox) and iOS 14.8 `18H17` on Apple iPhone 6s (Safari).
+## Tested on
+
+- Chrome 112, Firefox 112: **Android 10** `QQ3A.200805.001` on Google Pixel 3 XL
+- Safari 14.1.2: **iOS 14.8** `18H17` on Apple iPhone 6s
+- Safari 15.6.4: **iPadOS 15.7.2** `19H218` on Apple iPad Pro 10.5 (The result is the same as in Safari 14.1.2)
+
+<table>
+  <thead>
+    <tr>
+      <th>Result in Safari 15.6.4</th>
+    </tr>
+  </thead>
+  <tbody align="center" valign="top">
+    <tr>
+      <td><img src="overflow-wrap-around-float-ipados-safari-15_6_4-mobile-230415.png" alt="overflow-wrap-around-float-ipados-safari-15_6_4-mobile-230415" width="368"></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</td>
+    </tr>
+  </tfoot>
+</table>
