@@ -4,7 +4,6 @@
 
 - Static HTML: [230415-overflow-wrap-around-float.html](https://nooriro.github.io/hello/230415-overflow-wrap-around-float/230415-overflow-wrap-around-float.html) \([View in GitHub](230415-overflow-wrap-around-float.html)\)
 - CodePen: <https://codepen.io/nooriro/full/QWZNqeQ>
-- Stack Overflow:
 
 ## Different results in different browsers
 
