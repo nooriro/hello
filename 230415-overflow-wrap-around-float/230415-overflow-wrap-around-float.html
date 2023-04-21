@@ -61,10 +61,11 @@
       <div class="info"></div>
     </div>
     <script>
-      var elt = document.getElementsByClassName('info')[0];
-      if (elt) {
-        elt.innerHTML = '<span>' + navigator.userAgent + '</span>';
-      }
-    </script>      
+      (function () {
+        var elt = document.getElementsByClassName('info')[0];
+        if (elt)
+          elt.innerHTML = '<span>' + navigator.userAgent + '</span>';
+      })();
+    </script>
   </body>
 </html>
