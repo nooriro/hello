@@ -1,8 +1,8 @@
-# Cross-browser differences with `word-wrap/overflow-wrap: break-word` around float
+# Cross-browser differences with `word-wrap/overflow-wrap: break-word` around float (230415)
 
 ## Related links
 
-- Static HTML: [overflow-wrap-around-float.html](https://nooriro.github.io/hello/230415-overflow-wrap-around-float/overflow-wrap-around-float.html) \([View in GitHub](overflow-wrap-around-float.html)\)
+- Static HTML: [230415-overflow-wrap-around-float.html](https://nooriro.github.io/hello/230415-overflow-wrap-around-float/230415-overflow-wrap-around-float.html) \([View in GitHub](230415-overflow-wrap-around-float.html)\)
 - CodePen: <https://codepen.io/nooriro/full/QWZNqeQ>
 - Stack Overflow:
 
@@ -20,9 +20,9 @@ Scroll left and right to see all the results.
   </thead>
   <tbody align="center" valign="top">
     <tr>
-      <td><img src="overflow-wrap-around-float-android-chrome-112-230415.png" alt="overflow-wrap-around-float-android-chrome-112-230415" width="368"></td>
-      <td><img src="overflow-wrap-around-float-ios-safari-14_1_2-230415.png" alt="overflow-wrap-around-float-ios-safari-14_1_2-230415" width="368"></td>
-      <td><img src="overflow-wrap-around-float-android-firefox-112-230415.png" alt="overflow-wrap-around-float-android-firefox-112-230415" width="368"></td>
+      <td><img src="230415-overflow-wrap-around-float-android-chrome-112.png" alt="230415-overflow-wrap-around-float-android-chrome-112" width="368"></td>
+      <td><img src="230415-overflow-wrap-around-float-ios-safari-14_1_2.png" alt="230415-overflow-wrap-around-float-ios-safari-14_1_2" width="368"></td>
+      <td><img src="230415-overflow-wrap-around-float-android-firefox-112.png" alt="230415-overflow-wrap-around-float-android-firefox-112" width="368"></td>
     </tr>
   </tbody>
   <tfoot>
@@ -54,7 +54,7 @@ The results are all different from the others.
   </thead>
   <tbody align="center" valign="top">
     <tr>
-      <td><img src="overflow-wrap-around-float-ipados-safari-15_6_4-mobile-230415.png" alt="overflow-wrap-around-float-ipados-safari-15_6_4-mobile-230415" width="368"></td>
+      <td><img src="230415-overflow-wrap-around-float-ipados-safari-15_6_4-mobile.png" alt="230415-overflow-wrap-around-float-ipados-safari-15_6_4-mobile" width="368"></td>
     </tr>
   </tbody>
   <tfoot>
