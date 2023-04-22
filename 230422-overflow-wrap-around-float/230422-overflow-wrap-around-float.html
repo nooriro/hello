@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>word-wrap/overflow-wrap: break-word around float (230422)</title>
+    <style>
+      /* Force use specific monospace font to easily observe differences between browsers */
+      @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+      body {
+        font-family: 'Inconsolata', monospace;
+        font-size: 16px;
+        line-height: 1.25;
+        background-color: #999;
+        overflow-wrap: break-word;
+      }
+
+      .wrapper {
+        width: 320px;
+      }
+
+      .item {
+        background-color: #efc7ef;  /* light pink */
+        margin: 1em 0;
+      }
+
+      .item > img:first-child {
+        float: left;
+      }
+
+      .item > p {
+        margin: 0;
+      }
+
+      .item::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .info > span {
+        white-space: break-spaces;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="item">
+        <img width="128" height="80" src="https://nooriro.github.io/hello/assets/cat-6853848-512x320.jpg">
+        <p>The quick brown fox jumps over the lazy dog d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592</p>
+      </div>
+      <div class="item">
+        <img width="128" height="80" src="https://nooriro.github.io/hello/assets/cat-6853848-512x320.jpg">
+        <p><a href="https://example.com/" target="_blank" rel="noopener">The quick brown fox jumps over the lazy dog d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592</a></p>
+      </div>
+      <div class="info"></div>
+    </div>
+    <script>
+      (function () {
+        var elt = document.getElementsByClassName('info')[0];
+        if (elt)
+          elt.innerHTML = '<span>' + navigator.userAgent + '</span>';
+      })();
+    </script>
+  </body>
+</html>
