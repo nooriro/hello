@@ -1,33 +1,48 @@
-# Cross-browser differences with `word-wrap/overflow-wrap: break-word` around float (230422)
+# Cross-browser differences with `word-wrap/overflow-wrap: break-word` around float
 
 ## Related links
 
 - Static HTML: [230422-overflow-wrap-around-float.html](https://nooriro.github.io/hello/230422-overflow-wrap-around-float/230422-overflow-wrap-around-float.html) \([source on GitHub](230422-overflow-wrap-around-float.html)\)
 - CodePen: <https://codepen.io/nooriro/full/xxygLyG> \([Editor View](https://codepen.io/nooriro/pen/xxygLyG), [Details View](https://codepen.io/nooriro/details/xxygLyG)\)
 
-## Different results in different browsers
+## Results in various browsers
 
-The results in Chrome, Firefox, and Safari are **all different** from the others.
+The followings are the results in the *latest* version of Chrome, Safari, and Firefox *as of April 28, 2023*.
 
 Scroll left and right to see all the results.
 
-| Result in Chrome 112 | Result in Firefox 112 | Result in Safari 14.1.2 |
-|:--------------------:|:---------------------:|:-----------------------:|
-| <img src="230422-overflow-wrap-around-float-android-chrome-112.png" alt="230422-overflow-wrap-around-float-android-chrome-112" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-android-firefox-112.png" alt="230422-overflow-wrap-around-float-android-firefox-112" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-ios-safari-14_1_2.png" alt="230422-overflow-wrap-around-float-ios-safari-14_1_2" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Result in Chrome 112 on Android | Result in Safari 16.4 on iPadOS | Result in Firefox 112 on Android |
+|:-------------------------------:|:-------------------------------:|:--------------------------------:|
+| <img src="230422-overflow-wrap-around-float-android-chrome-112.png" alt="230422-overflow-wrap-around-float-android-chrome-112" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile.png" alt="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-android-firefox-112.png" alt="230422-overflow-wrap-around-float-android-firefox-112" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
-Note that `d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592` is the [SHA-256](https://en.wikipedia.org/wiki/SHA-256) *hash value* of "`The quick brown fox jumps over the lazy dog`". It is a 64-digit hexadecimal number.
+A sleeping cat image, by [Pasi Mämmelä](https://pixabay.com/users/mammela-686310/) from [Pixabay](https://pixabay.com/photos/cat-sleep-sleeping-cat-fluffy-6853848/), is *floated left*.
 
+A 64-digit hexadecmial number `d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592`, which is the [SHA-256](https://en.wikipedia.org/wiki/SHA-256) *hash value* of "`The quick brown fox jumps over the lazy dog`", is *too long to fit* within the element that contains it.
 
-- **Chrome:** The long hash value is ***wrapped around the image*** *whether it's non-linked or linked*. This is the result what I expected.
-- **Firefox:** The long hash value is ***dropped below the image*** *whether it's non-linked or linked*.
-- **Safari:** The long hash value is ***wrapped*** around the image ***if it's non-linked***. It is ***dropped*** below the image ***if it's linked***.
+Setting `word-wrap` / `overflow-wrap` to `break-word` in CSS prevents the long hash value from overflowing out of the element. But the results are different across browsers. 
+
+- **Chrome 112:** The long hash value is ***wrapped around the image*** *whether it’s non-linked or linked*.
+- **Safari 16.4:** Same as Chrome 112.
+- **Firefox 112:** The long hash value is ***dropped below the image*** *whether it’s non-linked or linked*.
+
+Chrome 112 and Safari 16.4 are showing the expected result, but **Firefox 112 isn’t.**
+
+## Old versions of Safari
+
+Even Safari 15 (released on 2021-2022) shows the *buggy* result, which is different from the result in Firefox 112.
+
+- **Safari 15.6.4:** The long hash value is ***wrapped*** around the image ***if it’s non-linked***. It is ***dropped*** below the image ***if it’s linked***.
+- **Safari 14.1.2:** Same as Safari 15.6.4.
+
+| Result in Safari 14.1.2 on iOS | Result in Safari 15.6.4 on iPadOS | Result in Safari 16.4 on iPadOS |
+|:------------------------------:|:---------------------------------:|:-------------------------------:|
+| <img src="230422-overflow-wrap-around-float-ios-safari-14_1_2.png" alt="230422-overflow-wrap-around-float-ios-safari-14_1_2" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-ipados-safari-15_6_4-mobile.png" alt="230422-overflow-wrap-around-float-ipados-safari-15_6_4-mobile" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile.png" alt="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+
+Testing Safari on i(Pad)OS is a headache. First, Safari is tied to OS. You need N corresponding versions of iOS/iPadOS for testing N versions of Safari. Second, downgrading iOS/iPadOS is impossible except some special cases. Once the OS version is updated, the device will never be able to test the previous version of Safari.
 
 ## Tested on
 
-- Chrome 112, Firefox 112: **Android 10** `QQ3A.200805.001` on Google Pixel 3 XL
-- Safari 14.1.2: **iOS 14.8** `18H17` on Apple iPhone 6s
-- Safari 15.6.4: **iPadOS 15.7.2** `19H218` on Apple iPad Pro 10.5 (The result is the same as in Safari 14.1.2)
-
-| Result in Safari 15.6.4 |
-| :---------------------: |
-| <img src="230422-overflow-wrap-around-float-ipados-safari-15_6_4-mobile.png" alt="230422-overflow-wrap-around-float-ipados-safari-15_6_4-mobile" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+- **Chrome 112, Firefox 112:** Android 10 `QQ3A.200805.001` on Google Pixel 3 XL
+- **Safari 14.1.2:** iOS 14.8 `18H17` on Apple iPhone 6s
+- **Safari 15.6.4:** iPadOS 15.7.2 `19H218` on Apple iPad Pro 10.5
+- **Safari 16.4:** iPadOS 16.4.1 `20E252` on Apple iPad Pro 11 4th gen (Thanks: Apple Garosugil)
