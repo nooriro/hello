@@ -15,11 +15,13 @@ Scroll left and right to see all the results.
 |:-------------------------------:|:-------------------------------:|:--------------------------------:|
 | <img src="230422-overflow-wrap-around-float-android-chrome-112.png" alt="230422-overflow-wrap-around-float-android-chrome-112" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile.png" alt="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-android-firefox-112.png" alt="230422-overflow-wrap-around-float-android-firefox-112" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
-A sleeping cat image, by [Pasi Mämmelä](https://pixabay.com/users/mammela-686310/) from [Pixabay](https://pixabay.com/photos/cat-sleep-sleeping-cat-fluffy-6853848/), is *floated left*.
+- A sleeping cat image\* is **floated left.**\
+\( \* *by [Pasi Mämmelä](https://pixabay.com/users/mammela-686310/) from [Pixabay](https://pixabay.com/photos/cat-sleep-sleeping-cat-fluffy-6853848/)* \)
+- A hash value `d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592`\*\* is **too long to fit** within the element that contains it.\
+\( \*\* *the [SHA-256](https://en.wikipedia.org/wiki/SHA-256) *hash value* of "`The quick brown fox jumps over the lazy dog`", which is 64 hex digit* \)
 
-A 64-digit hexadecmial number `d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592`, which is the [SHA-256](https://en.wikipedia.org/wiki/SHA-256) *hash value* of "`The quick brown fox jumps over the lazy dog`", is *too long to fit* within the element that contains it.
 
-Setting `word-wrap` / `overflow-wrap` to `break-word` in CSS prevents the long hash value from overflowing out of the element. But the results are different across browsers. 
+Setting `word-wrap` / `overflow-wrap` to `break-word` in CSS prevents the long hash value from overflowing out of the element. But the results are **different across browsers.** 
 
 - **Chrome 112:** The long hash value is ***wrapped around the image*** *whether it’s non-linked or linked*.
 - **Safari 16.4:** Same as Chrome 112.
@@ -27,9 +29,10 @@ Setting `word-wrap` / `overflow-wrap` to `break-word` in CSS prevents the long h
 
 Chrome 112 and Safari 16.4 are showing the expected result, but **Firefox 112 isn’t.**
 
+
 ## Old versions of Safari
 
-Even Safari 15 (released on 2021-2022) shows the *buggy* result, which is different from the result in Firefox 112.
+Even Safari 15 (released on 2021-2022) shows the *inconsistent* result, which is different from the result in Safari 16.4.
 
 - **Safari 15.6.4:** The long hash value is ***wrapped*** around the image ***if it’s non-linked***. It is ***dropped*** below the image ***if it’s linked***.
 - **Safari 14.1.2:** Same as Safari 15.6.4.
