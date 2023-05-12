@@ -15,11 +15,9 @@ Scroll left and right to see all the results.
 |:-------------------------------:|:-------------------------------:|:--------------------------------:|
 | <img src="230422-overflow-wrap-around-float-android-chrome-112-ua-reduction.png" alt="230422-overflow-wrap-around-float-android-chrome-112-ua-reduction" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile.png" alt="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-android-firefox-112.png" alt="230422-overflow-wrap-around-float-android-firefox-112" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
-- A sleeping cat image\* is **floated left.**\
-\( \* *by [Pasi Mämmelä](https://pixabay.com/users/mammela-686310/) from [Pixabay](https://pixabay.com/photos/cat-sleep-sleeping-cat-fluffy-6853848/)* \)
-- A hash value `d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592`\*\* is **too long to fit** within the element that contains it.\
-\( \*\* *the [SHA-256](https://en.wikipedia.org/wiki/SHA-256) *hash value* of "`The quick brown fox jumps over the lazy dog`", which is 64 hex digit* \)
-
+- A sleeping cat image \([source](https://pixabay.com/photos/cat-sleep-sleeping-cat-fluffy-6853848/)\) is **floated left.**
+- A 64-hex-digit hash value `d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592` is **too long to fit** within the element that contains it.
+&emsp;\(&nbsp;Just an FYI: *It is the [SHA-256](https://en.wikipedia.org/wiki/SHA-256) *hash value* of "`The quick brown fox jumps over the lazy dog`".* \)
 
 Setting `word-wrap` / `overflow-wrap` to `break-word` in CSS prevents the long hash value from overflowing out of the element. But the results are **different across browsers.** 
 
