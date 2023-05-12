@@ -5,15 +5,15 @@
 - Static HTML: [230422-overflow-wrap-around-float.html](https://nooriro.github.io/hello/230422-overflow-wrap-around-float/230422-overflow-wrap-around-float.html) \([source on GitHub](230422-overflow-wrap-around-float.html)\)
 - CodePen: <https://codepen.io/nooriro/full/xxygLyG> \([Editor View](https://codepen.io/nooriro/pen/xxygLyG), [Details View](https://codepen.io/nooriro/details/xxygLyG)\)
 
-## Results in various browsers
+## Results in notable browsers
 
-The followings are the results in the *latest* version of Chrome, Safari, and Firefox *as of April 28, 2023*.
+The followings are the results in the *latest* version of Chrome, Firefox, and Safari *as of April 28, 2023*.
 
 Scroll left and right to see all the results.
 
-| Result in Chrome 112 on Android | Result in Safari 16.4 on iPadOS | Result in Firefox 112 on Android |
-|:-------------------------------:|:-------------------------------:|:--------------------------------:|
-| <img src="230422-overflow-wrap-around-float-android-chrome-112-ua-reduction.png" alt="230422-overflow-wrap-around-float-android-chrome-112-ua-reduction" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile.png" alt="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-android-firefox-112.png" alt="230422-overflow-wrap-around-float-android-firefox-112" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Result in Chrome 112 on Android | Result in Firefox 112 on Android | Result in Safari 16.4 on iPadOS |
+|:-------------------------------:|:--------------------------------:|:-------------------------------:|
+| <img src="230422-overflow-wrap-around-float-android-chrome-112-ua-reduction.png" alt="230422-overflow-wrap-around-float-android-chrome-112-ua-reduction" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-android-firefox-112.png" alt="230422-overflow-wrap-around-float-android-firefox-112" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | <img src="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile.png" alt="230422-overflow-wrap-around-float-ipados-safari-16_4-mobile" width="336"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 - A sleeping cat image \([source](https://pixabay.com/photos/cat-sleep-sleeping-cat-fluffy-6853848/)\) is **floated left.**
 - A 64-hex-digit hash value `d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592` is **too long to fit** within the element that contains it.
@@ -22,8 +22,8 @@ Scroll left and right to see all the results.
 Setting `word-wrap` / `overflow-wrap` to `break-word` in CSS prevents the long hash value from overflowing out of the element. But the results are **different across browsers.** 
 
 - **Chrome 112:** The long hash value is ***wrapped around the image*** *whether it’s non-linked or linked*.
-- **Safari 16.4:** Same as Chrome 112.
 - **Firefox 112:** The long hash value is ***dropped below the image*** *whether it’s non-linked or linked*.
+- **Safari 16.4:** Same as Chrome 112.
 
 Chrome 112 and Safari 16.4 are showing the expected result, but **Firefox 112 isn’t.**
 
